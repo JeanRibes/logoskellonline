@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <title>Viewer logoskell</title>
+</head>
+<body>
+<h2>Logoskell</h2>
+<p>Ce petit site vous permet de visualiser une figure au format Logoskell.
+    Essayer <a
+            href="/logoskell/[Forward 30, Left 90, Forward 60, Right 180, Forward 60, Left 90, Forward 50 , Left 180, Repeat 3 [Forward 30, Right 90]]">ce
+        lien</a>
+</p>
+<section>
+    <!--<label for="prog">Programme Logoskell</label>-->
+    <textarea name="Programme Logoskell" id="prog"></textarea>
+    <button type="submit" onclick="generer()">Tracer</button>
+</section>
+<script>
+    function generer() {
+        var p = document.getElementById("prog");
+        console.log(p.value);
+        var fig = document.getElementById("fig")
+        fig.src = "/logoskell/" + p.value
+    }
+</script>
+<img id="fig"
+     src="/static/tc.svg">
+</body>
+</html>
